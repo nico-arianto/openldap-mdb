@@ -4,7 +4,7 @@ LABEL maintainer="Nico Arianto <nico.arianto@gmail.com>"
 
 ENV DEBUG_LEVEL=32768
 
-COPY ldif /tmp/tia/
+COPY ldif /tmp/ldap/
 COPY script /etc/openldap/bin
 
 # OpenLDAP installation
@@ -14,10 +14,10 @@ RUN yum -y update && \
 # Configuring slapd
     rm /etc/openldap/slapd.d/cn\=config/olcDatabase\={2}bdb.ldif && \
     service slapd start && \
-    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/tia/slapd.d/init/config.ldif && \
-    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/tia/slapd.d/init/database_mdb.ldif && \
-    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/tia/slapd.d/init/database_monitor.ldif && \
-    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/tia/slapd.d/init/database_config.ldif && \
+    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/config.ldif && \
+    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/database_mdb.ldif && \
+    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/database_monitor.ldif && \
+    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/database_config.ldif && \
     service slapd stop && \
 
 # Setup the execution files
