@@ -1,0 +1,11 @@
+# Replace the TLS Server Configuration
+dn: cn=config
+changetype: modify
+replace: olcTLSCertificateKeyFile
+olcTLSCertificateKeyFile: {{ TLS_CERTIFICATE_KEY_FILE }}
+-
+replace: olcTLSCertificateFile
+olcTLSCertificateFile: {{ TLS_CERTIFICATE_FILE }}
+-
+replace: olcTLSCACertificateFile
+olcTLSCACertificateFile: {{ TLS_CA_CERTIFICATE_FILE }}

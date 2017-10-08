@@ -1,0 +1,10 @@
+dn: cn=nico,ou=People,dc=example,dc=com
+objectclass: person
+cn: nico
+sn: arianto
+
+dn: cn=data,ou=Group,dc=example,dc=com
+objectclass: groupOfNames
+objectclass: top
+cn: data
+member: cn=nico,ou=People,dc=example,dc=com

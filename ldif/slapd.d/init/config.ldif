@@ -1,0 +1,7 @@
+# Replace the Log Level to `stats`
+dn: cn=config
+changetype: modify
+replace: olcLogLevel
+olcLogLevel: 256
+-
+delete: olcTLSCACertificatePath
