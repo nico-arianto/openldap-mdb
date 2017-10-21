@@ -1,0 +1,8 @@
+# Add Module Config
+dn: cn=module{0},cn=config
+changetype: add
+cn: module{0}
+objectClass: olcModuleList
+olcModulePath: /usr/lib64/openldap/
+olcModuleLoad: memberof.la
+olcModuleLoad: refint.la
