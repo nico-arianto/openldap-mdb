@@ -1,0 +1,9 @@
+# Add refint Overlay
+dn: olcOverlay={1}refint,olcDatabase={2}mdb,cn=config
+changetype: add
+objectClass: olcConfig
+objectClass: olcRefintConfig
+objectClass: olcOverlayConfig
+objectClass: top
+olcOverlay: {1}refint
+olcRefintAttribute: memberOf member

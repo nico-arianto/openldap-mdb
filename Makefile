@@ -1,5 +1,5 @@
 NAME = nico0arianto/openldap-mdb
-VERSION = 1.0.0
+VERSION = 1.0.1
 
 .PHONY: build build-nocache tag-latest push push-latest release git-tag-version
 

@@ -18,6 +18,9 @@ RUN yum -y update && \
     ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/database_mdb.ldif && \
     ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/database_monitor.ldif && \
     ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/database_config.ldif && \
+    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/module.ldif && \
+    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/overlay_memberof.ldif && \
+    ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/ldap/overlay_refint.ldif && \
     service slapd stop && \
 
 # Setup the execution files
